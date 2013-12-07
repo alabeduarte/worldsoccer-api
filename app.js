@@ -1,13 +1,8 @@
 var express = require('express');
 var app = express();
-var port = 3000;
 
-app.get("/", function(req, res){
-  var body = '{ "response": "OK" }';
-  res.setHeader('Content-Type', 'text/json');
-  res.setHeader('Content-Length', body.length);
-  res.end(body);
-});
+app.get("/", function(req, res){  
+  res.end('{ "response": "OK" }');
+}).listen(process.env.PORT || 3000);
 
-app.listen(port);
-console.log('Listening on port ' + port);
+console.log("Listening on " + process.env.PORT);
