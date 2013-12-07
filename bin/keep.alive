@@ -1,0 +1,2 @@
+#!/usr/bin/env node
+require('http').get('http://secure-everglades-2636.herokuapp.com');
