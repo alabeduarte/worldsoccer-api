@@ -1,8 +1,9 @@
 var request = require('supertest')
   , S = require('string')
   , express = require('express')
-  , app = require(__dirname + '/../lib/server.js')(express)
-  , parser = require('xml2json');
+  , parser = require(__dirname + '/../../lib/player.parser')(require("xml2json"))
+  , app = require(__dirname + '/../../lib/server')(express);
+
 
 var sourceHost = "http://localhost:6969";
 
@@ -14,7 +15,7 @@ before(function(){
   });
   mockServer.listen(6969);
 
-  var controller = require(__dirname + '/../lib/controllers/players.controller')(app, sourceHost, require('request'), parser);
+  var controller = require(__dirname + '/../../lib/controllers/players.controller')(app, sourceHost, require('request'), parser);
 });
 
 

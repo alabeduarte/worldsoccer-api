@@ -1,6 +1,6 @@
 var request = require('supertest');
 var express = require('express');
-var app = require(__dirname + '/../lib/server.js')(express);
+var app = require(__dirname + '/../lib/server')(express);
 
 describe('GET /', function() {
   it('respond with json', function(done) {
