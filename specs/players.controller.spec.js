@@ -14,7 +14,7 @@ before(function(){
   });
   mockServer.listen(6969);
 
-  var controller = require(__dirname + '/../lib/controllers/players')(app, sourceHost, require('request'), parser);
+  var controller = require(__dirname + '/../lib/controllers/players.controller')(app, sourceHost, require('request'), parser);
 });
 
 

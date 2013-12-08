@@ -3,4 +3,4 @@ var app = require('./lib/server')(
 );
 
 var sourceHost = 'http://c3420952.r52.cf0.rackcdn.com';
-require('./lib/controllers/players')(app, sourceHost, require('request'), require('xml2json'));
+require('./lib/controllers/players.controller')(app, sourceHost, require('request'), require('xml2json'));
