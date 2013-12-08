@@ -5,4 +5,4 @@ install:
 
 run:;@nf start
 
-test:;@$(env) mocha specs
+test:;@$(env) mocha specs --reporter spec
