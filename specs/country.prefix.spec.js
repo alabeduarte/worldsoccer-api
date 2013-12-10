@@ -1,10 +1,9 @@
-var assert = require('assert')
-  , S = require('string');
+var assert = require('assert');
 
   var countryPrefix;
 
   beforeEach(function() {
-    countryPrefix = require(__dirname + '/../lib/country.prefix')(S);
+    countryPrefix = require(__dirname + '/../lib/country.prefix');
   });
 
   describe('given url "/players/brazil"', function() {
