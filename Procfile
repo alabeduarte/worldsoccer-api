@@ -1,2 +1,1 @@
-web: node app.js
-seeds: ./bin/seed
+web: npm start

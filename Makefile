@@ -1,13 +1,12 @@
 env = PATH=$$PATH:node_modules/.bin
 
-install:
-	@npm install
+install:;@npm install
 
-run:;@$(env) nf start -f Procfile.dev
+run:;@$(env) foreman start -e .env -f Procfile.dev
 
 test:
-	#@mongod --fork
-	@$(env) mocha specs --bail --recursive --reporter spec
-	#@kill -2 `ps aux | grep [m]ongo* | awk '{ print $2 }'`
+	@mongod --fork
+	@$(env) foreman run -e test.env npm test
+	@kill -2 `ps aux | grep [m]ongo* | awk '{ print $2 }'`
 
-seeds:;@$(env) nf start seeds -f Procfile.dev
+seeds:;@$(env) foreman run ./bin/seed

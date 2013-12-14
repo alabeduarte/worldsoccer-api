@@ -1,11 +1,11 @@
-var dbURI    = 'mongodb://localhost/worldsoccer-api-test'
+var dbURI    = process.env.MONGOLAB_URI
   , mongoose = require('mongoose')
   , clearDB  = require('mocha-mongoose')(dbURI)
   , Country = require(__dirname + '/../../lib/models/country.model')()
   , request = require(__dirname + '/requestTest')
   , app = require(__dirname + '/../../lib/server')(require('express'));
 
-  require(__dirname + '/../../lib/controllers/country.controller')(app);
+  require(__dirname + '/../../lib/controllers/countries.controller')(app);
 
   beforeEach(function(done) {
     if (mongoose.connection.db) return done();

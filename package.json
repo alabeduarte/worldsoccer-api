@@ -8,6 +8,10 @@
     "type": "git",
     "url": "git@heroku.com:secure-everglades-2636.git"
   },
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha specs --bail --recursive --reporter spec"
+  },
   "dependencies": {
     "foreman": "~0.0.25",
     "express": "~3.4.6",

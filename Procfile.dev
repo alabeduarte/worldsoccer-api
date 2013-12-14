@@ -1,2 +1,2 @@
-web: node app.js
-seeds: ./bin/seed
+database: mongod
+web: nodemon app.js

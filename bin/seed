@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var dbURI = process.env.DATABASE_URL
+var dbURI = process.env.MONGOLAB_URI
   , mongoose = require('mongoose')
   , Country = require(__dirname + '/../lib/models/country.model')();
 
