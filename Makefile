@@ -9,3 +9,5 @@ test:
 	#@mongod --fork
 	@$(env) mocha specs --bail --recursive --reporter spec
 	#@kill -2 `ps aux | grep [m]ongo* | awk '{ print $2 }'`
+
+seeds:;@$(env) nf start seeds -f Procfile.dev

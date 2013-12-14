@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+var dbURI = process.env.DATABASE_URL
+  , mongoose = require('mongoose')
+  , Country = require(__dirname + '/../lib/models/country.model')();
+
+mongoose.connect(dbURI);
+Country.remove({}, function(err, countries) {
+  console.log("All countries have been removed");
+  Country.create(require('./data/countries'), function(err, countries) {
+    console.log("All countries have been created");
+  });
+});
