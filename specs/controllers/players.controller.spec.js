@@ -1,4 +1,4 @@
-var request = require('supertest')
+var request = require(__dirname + '/requestTest')
   , nock = require('nock')
   , app = require(__dirname + '/../../lib/server')(require('express'))
   , url = 'http://c3420952.r52.cf0.rackcdn.com';
@@ -12,8 +12,8 @@ var request = require('supertest')
     });
     it('respond with json', function(done) {
       var expectedResponse = '[{"id":"1","fullName":"John Doe","firstName":"John","lastName":"Doe","photo":"http://cdn.soccerwiki.org/images/player/1.jpg"},{"id":"2","fullName":"Mary Doe","firstName":"Mary","lastName":"Doe","photo":"http://cdn.soccerwiki.org/images/player/2.jpg"}]';
-      get('/players/brazil', expectedResponse, done);
-    })
+      request(app).get('/players/brazil', expectedResponse, done);
+    });
   });
 
   describe('GET /players/italy', function() {
@@ -23,14 +23,6 @@ var request = require('supertest')
     });
     it('respond with json', function(done) {
       var expectedResponse = '[{"id":"10","fullName":"Roberto Baggio","firstName":"Roberto","lastName":"Baggio","photo":"http://cdn.soccerwiki.org/images/player/10.jpg"},{"id":"21","fullName":"Cristian Vieri","firstName":"Cristian","lastName":"Vieri","photo":"http://cdn.soccerwiki.org/images/player/21.jpg"}]';
-      get('/players/italy', expectedResponse, done);
-    })
+      request(app).get('/players/italy', expectedResponse, done);
+    });
   });
-
-  function get(url, expectedResponse, done) {
-    request(app).get(url).expect(200, expectedResponse)
-        .end(function(err, res) {
-          if (err) return done(err);
-          done()
-        });
-  }

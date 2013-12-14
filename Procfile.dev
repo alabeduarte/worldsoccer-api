@@ -1,1 +1,2 @@
-web: node_modules/.bin/nodemon app.js
+database: mongod
+web: node app.js
