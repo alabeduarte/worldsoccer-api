@@ -21,7 +21,8 @@ var dbURI    = process.env.MONGOLAB_URI
     beforeEach(function(done) {
       Country.create({
         name: "Brazil",
-        imageUrl: "http://image.worldsoccer-api.com/brazil.jpg"
+        flag: "http://image.worldsoccer-api.com/brazil.jpg",
+        counryId: "BRA"
       }, function(err, country) {
         Country.find({}, function(err, countries) {
           expectedResponse = JSON.stringify(countries);

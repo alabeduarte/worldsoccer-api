@@ -5,8 +5,8 @@ install:;@npm install
 run:;@$(env) foreman start -e .env -f Procfile.dev
 
 test:
-	@mongod --fork
+	# @mongod --fork
 	@$(env) foreman run -e test.env npm test
-	@kill -2 `ps aux | grep [m]ongo* | awk '{ print $2 }'`
+	# @kill -2 `ps aux | grep [m]ongo* | awk '{ print $2 }'`
 
 seeds:;@$(env) foreman run ./bin/seed
