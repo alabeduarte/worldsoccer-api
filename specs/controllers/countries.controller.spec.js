@@ -32,6 +32,6 @@ var dbURI    = process.env.MONGOLAB_URI
     });
 
     it('respond with json', function(done) {
-      request(app).get('/countries', expectedResponse, done);
+      request(app).get('/countries', 200, expectedResponse, done);
     });
   });

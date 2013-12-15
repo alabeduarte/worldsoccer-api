@@ -12,7 +12,7 @@ var request = require(__dirname + '/requestTest')
     });
     it('respond with json', function(done) {
       var expectedResponse = '[{"id":"1","fullName":"John Doe","firstName":"John","lastName":"Doe","photo":"http://cdn.soccerwiki.org/images/player/1.jpg"},{"id":"2","fullName":"Mary Doe","firstName":"Mary","lastName":"Doe","photo":"http://cdn.soccerwiki.org/images/player/2.jpg"}]';
-      request(app).get('/players/bra', expectedResponse, done);
+      request(app).get('/players/bra', 200, expectedResponse, done);
     });
   });
 
@@ -23,6 +23,15 @@ var request = require(__dirname + '/requestTest')
     });
     it('respond with json', function(done) {
       var expectedResponse = '[{"id":"10","fullName":"Roberto Baggio","firstName":"Roberto","lastName":"Baggio","photo":"http://cdn.soccerwiki.org/images/player/10.jpg"},{"id":"21","fullName":"Cristian Vieri","firstName":"Cristian","lastName":"Vieri","photo":"http://cdn.soccerwiki.org/images/player/21.jpg"}]';
-      request(app).get('/players/ita', expectedResponse, done);
+      request(app).get('/players/ita', 200, expectedResponse, done);
+    });
+  });
+
+  describe('GET /players/not_found', function() {
+    before(function() {
+      nock(url) .get('/XXXplayerbasicdata.xml').reply(404, '<html><h1>Not Found</h1><p>The resource could not be found.</p></html>');
+    });
+    it('respond with json', function(done) {
+      request(app).get('/players/xxx', 404, '404: Page not Found', done);
     });
   });

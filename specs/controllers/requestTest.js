@@ -1,10 +1,10 @@
 module.exports = function(app) {
   return {
-    get: function(url, expectedResponse, done) {
+    get: function(url, statusCode, expectedResponse, done) {
       var request = require('supertest');
       request(app)
         .get(url)
-        .expect(200, expectedResponse)
+        .expect(statusCode, expectedResponse)
         .end(function(err, res) {
           if (err) return done(err);
             done();
