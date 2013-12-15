@@ -6,7 +6,7 @@
   "license": "BSD-2-Clause",
   "repository": {
     "type": "git",
-    "url": "git@heroku.com:secure-everglades-2636.git"
+    "url": "git@heroku.com:worldsoccer-api.git"
   },
   "scripts": {
     "start": "node app.js",
