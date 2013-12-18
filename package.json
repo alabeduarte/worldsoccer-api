@@ -8,9 +8,10 @@
     "type": "git",
     "url": "git@heroku.com:worldsoccer-api.git"
   },
-  "main": "app.js",
+  "main": "bin/server.js",
   "scripts": {
-    "test": "mocha specs --recursive --reporter spec"
+    "start": "node bin/server.js",
+    "test": "mocha"
   },
   "dependencies": {
     "express": "~3.4.6",

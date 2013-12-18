@@ -5,7 +5,7 @@ install:;@npm install
 
 run:;@$(env) nf start -j Procfile.dev
 
-test: .mongo.start
+spec:	.mongo.start
 	@$(env) NODE_ENV=test npm test
 	@$(MAKE) .mongo.stop
 
