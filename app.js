@@ -1,4 +1,5 @@
-require('mongoose').connect(process.env.MONGOLAB_URI);
+var config = require('config');
+require('mongoose').connect(config.database);
 var app = require('./lib/server')(
   require('express')
 );

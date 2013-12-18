@@ -1,4 +1,5 @@
-var dbURI    = process.env.MONGOLAB_URI
+var config = require('config')
+  , dbURI    = config.database
   , mongoose = require('mongoose')
   , clearDB  = require('mocha-mongoose')(dbURI)
   , Country = require(__dirname + '/../../lib/models/country.model')()
@@ -32,6 +33,6 @@ var dbURI    = process.env.MONGOLAB_URI
     });
 
     it('respond with json', function(done) {
-      request(app).get('/countries', 200, expectedResponse, done);
+      request(app).get('/countrisses', 200, expectedResponse, done);
     });
   });

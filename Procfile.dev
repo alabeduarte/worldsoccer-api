@@ -1,2 +1,2 @@
-database: mongod
-web: nodemon app.js
+db: mongod
+web: nodemon

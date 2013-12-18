@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-var dbURI = process.env.MONGOLAB_URI
+var config = require("config")
+  , dbURI = config.database
   , mongoose = require('mongoose')
   , Country = require(__dirname + '/../lib/models/country.model')();
 
@@ -8,5 +9,6 @@ Country.remove({}, function(err, countries) {
   console.log("All countries have been removed");
   Country.create(require('./data/countries'), function(err, countries) {
     console.log("All countries have been created");
+    process.exit(0);
   });
 });
