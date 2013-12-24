@@ -4,12 +4,12 @@ var config = require('config')
   , clearDB  = require('mocha-mongoose')(dbURI)
   , Country = require('../../lib/countries/model');
 
-  beforeEach(function(done) {
+  beforeEach(function (done) {
     if (mongoose.connection.db) return done();
     mongoose.connect(dbURI, done);
   });
 
-  before(function(done) {
+  before(function (done) {
     clearDB(done);
   });
 
