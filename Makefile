@@ -5,13 +5,15 @@ install:;@npm install
 
 run:;@$(env) nf start -j Procfile.dev
 
-spec:	.mongo.start
+spec:
+	#.mongo.start
 	@$(env) NODE_ENV=test npm test
-	@$(MAKE) .mongo.stop
+	#@$(MAKE) .mongo.stop
 
-seeds: .mongo.start
-	@$(env) nf run ./bin/seed
-	@$(MAKE) .mongo.stop
+seeds:
+	#.mongo.start
+	@$(env) ./bin/seed
+	#@$(MAKE) .mongo.stop
 
 clean:;@git clean -Xfdq
 

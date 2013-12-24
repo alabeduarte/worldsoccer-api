@@ -18,6 +18,7 @@ describe('Countries', function () {
   describe('GET /', function () {
 
     var brazil, italy;
+
     beforeEach(function (done) { (brazil = new Country()).save(done); });
     beforeEach(function (done) { (italy = new Country()).save(done); });
 

@@ -2,161 +2,513 @@
   {
     "name": "Alemanha",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_alemanha30.png",
-    "countryId": "GER"
+    "countryId": "GER",
+    "group": "G",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Argelia",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_argelia30.png",
-    "countryId": "ALG"
+    "countryId": "ALG",
+    "group": "H",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Argentina",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_argentina30.png",
-    "countryId": "ARG"
+    "countryId": "ARG",
+    "group": "F",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Austrália",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_australia30.png",
-    "countryId": "AUS"
+    "countryId": "AUS",
+    "group": "B",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Brasil",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/05/Brasil30.png",
-    "countryId": "BRA"
+    "countryId": "BRA",
+    "group": "A",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Bélgica",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_belgica30.png",
-    "countryId": "BEL"
+    "countryId": "BEL",
+    "group": "H",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Bósnia",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_bosnia30.png",
-    "countryId": "BIH"
+    "countryId": "BIH",
+    "group": "F",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Camarões",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/05/bandeira_camaroes30.png",
-    "countryId": "CMR"
+    "countryId": "CMR",
+    "group": "A",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Chile",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_chile30.png",
-    "countryId": "CHI"
+    "countryId": "CHI",
+    "group": "B",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Colômbia",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_colombia30.png",
-    "countryId": "COL"
+    "countryId": "COL",
+    "group": "C",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Coréia do Sul",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_coreiadosul30.png",
-    "countryId": "KOR"
+    "countryId": "KOR",
+    "group": "H",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Costa do Marfim",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_costadomarfim30.png",
-    "countryId": "CIV"
+    "countryId": "CIV",
+    "group": "C",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Costa Rica",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_costarica30.png",
-    "countryId": "CRC"
+    "countryId": "CRC",
+    "group": "D",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Croácia",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_croacia30.png",
-    "countryId": "CRO"
+    "countryId": "CRO",
+    "group": "A",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Equador",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_equador30.png",
-    "countryId": "ECU"
+    "countryId": "ECU",
+    "group": "E",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Espanha",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_espanha30.png",
-    "countryId": "ESP"
+    "countryId": "ESP",
+    "group": "B",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Estados Unidos",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_eua30.png",
-    "countryId": "USA"
+    "countryId": "USA",
+    "group": "G",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "França",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_franca30.png",
-    "countryId": "FRA"
+    "countryId": "FRA",
+    "group": "E",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Gana",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/05/Gana30.png",
-    "countryId": "GHA"
+    "countryId": "GHA",
+    "group": "G",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Grécia",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_grecia30.png",
-    "countryId": "GRE"
+    "countryId": "GRE",
+    "group": "C",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Holanda",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_holanda30.png",
-    "countryId": "NED"
+    "countryId": "NED",
+    "group": "B",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Honduras",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/05/bandeira_honduras30.png",
-    "countryId": "HON"
+    "countryId": "HON",
+    "group": "E",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Inglaterra",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/inglaterra_30.png",
-    "countryId": "ENG"
+    "countryId": "ENG",
+    "group": "D",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Irã",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_ira30.png",
-    "countryId": "IRN"
+    "countryId": "IRN",
+    "group": "F",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Itália",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_italia30.png",
-    "countryId": "ITA"
+    "countryId": "ITA",
+    "group": "D",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Japão",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_japao30.png",
-    "countryId": "JPN"
+    "countryId": "JPN",
+    "group": "C",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "México",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_mexico30.png",
-    "countryId": "MEX"
+    "countryId": "MEX",
+    "group": "A",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Nigéria",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_nigeria30.png",
-    "countryId": "NGA"
+    "countryId": "NGA",
+    "group": "F",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Portugal",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_portugal30.png",
-    "countryId": "POR"
+    "countryId": "POR",
+    "group": "G",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Rússia",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_russia30.png",
-    "countryId": "RUS"
+    "countryId": "RUS",
+    "group": "H",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Suiça",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_sauica30.png",
-    "countryId": "SUI"
+    "countryId": "SUI",
+    "group": "E",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   },
   {
     "name": "Uruguai",
     "flag": "http://s.glbimg.com/es/sde/f/organizacoes/2013/12/06/bandeira_uruguai30.png",
-    "countryId": "URU"
+    "countryId": "URU",
+    "group": "D",
+    "points": 0,
+    "matches": {
+      "wins": 0,
+      "draws": 0,
+      "losses": 0
+    },
+    "goals": {
+      "scored": 0,
+      "against": 0
+    }
   }
 ]

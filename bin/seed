@@ -2,9 +2,11 @@
 var config = require("config")
   , dbURI = config.database
   , mongoose = require('mongoose')
-  , Country = require(__dirname + '/../lib/models/country.model')();
+  , Country = require('../lib/countries/model');
 
 mongoose.connect(dbURI);
+
+console.log("Preparing to run all seeds");
 Country.remove({}, function(err, countries) {
   console.log("All countries have been removed");
   Country.create(require('./data/countries'), function(err, countries) {
