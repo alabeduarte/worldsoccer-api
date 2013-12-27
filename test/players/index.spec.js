@@ -15,7 +15,8 @@ describe('Players', function () {
           "fullName": "John Doe",
           "firstName": "John",
           "lastName": "Doe",
-          "photo": "http://cdn.soccerwiki.org/images/player/1.jpg"
+          "photo": "http://cdn.soccerwiki.org/images/player/1.jpg",
+          "position": "GK"
         },
         {
           "id": "2",
@@ -26,32 +27,6 @@ describe('Players', function () {
         }
       ];
       request(app).get('/bra/players', 200, expectedResponse, done);
-    });
-  });
-
-  describe('GET /ita/players', function () {
-    before(function () {
-      var xml = '<?xml version="1.0"?><PackData><PlayerData baseImageUrl="http://cdn.soccerwiki.org/images/player/"><P id="10" f="Roberto" s="Baggio" i="10.jpg"/><P id="21" f="Cristian" s="Vieri" i="21.jpg"/></PlayerData></PackData>';
-      nock(url).get('/ITAplayerbasicdata.xml').reply(200, xml);
-    });
-    it('respond with json', function (done) {
-      var expectedResponse = [
-        {
-          "id": "10",
-          "fullName": "Roberto Baggio",
-          "firstName": "Roberto",
-          "lastName": "Baggio",
-          "photo": "http://cdn.soccerwiki.org/images/player/10.jpg"
-        },
-        {
-          "id": "21",
-          "fullName": "Cristian Vieri",
-          "firstName": "Cristian",
-          "lastName": "Vieri",
-          "photo": "http://cdn.soccerwiki.org/images/player/21.jpg"
-        }
-      ];
-      request(app).get('/ita/players', 200, expectedResponse, done);
     });
   });
 
@@ -71,7 +46,7 @@ describe('Players', function () {
         nock(url).get('/BRAplayerbasicdata.xml').reply(200, xml);
       });
 
-      it('respond with json', function (done) {
+      it('should limit json result', function (done) {
         var lengthShouldEqual = function(lengthToCheck) {
           return function(res) { assert.equal(res.body.length, lengthToCheck); }
         };
@@ -79,4 +54,21 @@ describe('Players', function () {
       });
     });
   });
+
+  describe('Setting players positions', function() {
+    describe('GET /bra/players', function () {
+      before(function () {
+        var xml = '<?xml version="1.0"?><PackData><PlayerData><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/></PlayerData></PackData>';
+        nock(url).get('/BRAplayerbasicdata.xml').reply(200, xml);
+      });
+
+      it('should have at least one goalkeeper', function (done) {
+        var shouldHaveAtLeastOneGK = function(res) {
+          assert.equal(res.body[0].position, 'GK');
+        };
+        request(app).getWithPredicate('/bra/players', shouldHaveAtLeastOneGK, done);
+      });
+    });
+  });
+
 });
