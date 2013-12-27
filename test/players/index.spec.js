@@ -3,12 +3,12 @@ var nock = require('nock')
   , url = 'http://c3420952.r52.cf0.rackcdn.com';
 
 describe('Players', function () {
-  describe('GET /bra/players', function() {
-    before(function() {
+  describe('GET /bra/players', function () {
+    before(function () {
       var xml = '<?xml version="1.0"?><PackData><PlayerData baseImageUrl="http://cdn.soccerwiki.org/images/player/"><P id="1" f="John" s="Doe" i="1.jpg"/><P id="2" f="Mary" s="Doe" i="2.jpg"/></PlayerData></PackData>';
       nock(url).get('/BRAplayerbasicdata.xml').reply(200, xml);
     });
-    it('respond with json', function(done) {
+    it('respond with json', function (done) {
       var expectedResponse = [
         {
           "id": "1",
@@ -29,12 +29,12 @@ describe('Players', function () {
     });
   });
 
-  describe('GET /ita/players', function() {
-    before(function() {
+  describe('GET /ita/players', function () {
+    before(function () {
       var xml = '<?xml version="1.0"?><PackData><PlayerData baseImageUrl="http://cdn.soccerwiki.org/images/player/"><P id="10" f="Roberto" s="Baggio" i="10.jpg"/><P id="21" f="Cristian" s="Vieri" i="21.jpg"/></PlayerData></PackData>';
       nock(url).get('/ITAplayerbasicdata.xml').reply(200, xml);
     });
-    it('respond with json', function(done) {
+    it('respond with json', function (done) {
       var expectedResponse = [
         {
           "id": "10",
@@ -55,12 +55,28 @@ describe('Players', function () {
     });
   });
 
-  describe('GET /not_found/players', function() {
-    before(function() {
+  describe('GET /not_found/players', function () {
+    before(function () {
       nock(url) .get('/XXXplayerbasicdata.xml').reply(404, '<html><h1>Not Found</h1><p>The resource could not be found.</p></html>');
     });
-    it('respond with json', function(done) {
+    it('respond with json', function (done) {
       request(app).get('/xxx/players', 404, {}, done);
+    });
+  });
+
+  describe('Returning only the 23 selected players', function() {
+    describe('GET /bra/players', function () {
+      before(function () {
+        var xml = '<?xml version="1.0"?><PackData><PlayerData><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/></PlayerData></PackData>';
+        nock(url).get('/BRAplayerbasicdata.xml').reply(200, xml);
+      });
+
+      it('respond with json', function (done) {
+        var lengthShouldEqual = function(lengthToCheck) {
+          return function(res) { assert.equal(res.body.length, lengthToCheck); }
+        };
+        request(app).getWithPredicate('/bra/players', lengthShouldEqual(23), done);
+      });
     });
   });
 });
