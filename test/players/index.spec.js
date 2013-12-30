@@ -1,6 +1,7 @@
 var nock = require('nock')
   , app = require('../../lib/players')
-  , url = 'http://c3420952.r52.cf0.rackcdn.com';
+  , url = 'http://c3420952.r52.cf0.rackcdn.com'
+  , _ = require('underscore');
 
 describe('Players', function () {
   describe('GET /bra/players', function () {
@@ -23,7 +24,8 @@ describe('Players', function () {
           "fullName": "Mary Doe",
           "firstName": "Mary",
           "lastName": "Doe",
-          "photo": "http://cdn.soccerwiki.org/images/player/2.jpg"
+          "photo": "http://cdn.soccerwiki.org/images/player/2.jpg",
+          "position": "RB"
         }
       ];
       request(app).get('/bra/players', 200, expectedResponse, done);
@@ -57,18 +59,31 @@ describe('Players', function () {
 
   describe('Setting players positions', function() {
     describe('GET /bra/players', function () {
-      before(function () {
+      beforeEach(function () {
         var xml = '<?xml version="1.0"?><PackData><PlayerData><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/><P id="1" f="John" s="Doe"/><P id="2" f="Mary" s="Doe"/></PlayerData></PackData>';
         nock(url).get('/BRAplayerbasicdata.xml').reply(200, xml);
       });
 
       it('should have at least one goalkeeper', function (done) {
         var shouldHaveAtLeastOneGK = function(res) {
-          assert.equal(res.body[0].position, 'GK');
+          var goalKeeper = _.find(res.body, function(player){return player.position === 'GK';});
+          assert.isNotNull(goalKeeper);
         };
         request(app).getWithPredicate('/bra/players', shouldHaveAtLeastOneGK, done);
       });
+
+      it('every player should have position', function (done) {
+        var shouldHaveEveryPlayerWithPosition = function(res) {
+          var playersWithoutPosition = _.filter(res.body, function(player){return _.isUndefined(player.position) || player.position === '' ;});
+          assert.isTrue(playersWithoutPosition.length === 0);
+        };
+        request(app).getWithPredicate('/bra/players', shouldHaveEveryPlayerWithPosition, done);
+      });
+
+
     });
+
+
   });
 
 });
