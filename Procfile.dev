@@ -1,2 +1,2 @@
 db: mongod
-web: nodemon
+web: npm start

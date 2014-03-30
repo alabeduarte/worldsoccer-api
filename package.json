@@ -23,7 +23,6 @@
     "underscore": "~1.6.0"
   },
   "devDependencies": {
-    "nodemon": "~1.0.15",
     "mocha": "~1.18.2",
     "mocha-mongoose": "~1.0.1",
     "supertest": "~0.9.2",
